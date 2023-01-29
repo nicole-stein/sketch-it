@@ -23,7 +23,8 @@ def submit_photo():
         imgfile = request.files.get('submitted_photo')
         img = io.imread(imgfile)
         io.imshow(img)
-        plt.savefig("submissions/image")
+
+        plt.savefig(filepath("submissions/image"))
 
         # TODO: Edit images
         time.sleep(1)
@@ -42,11 +43,6 @@ def temp():
     print(image_filenames)
     return render_template("draw.html", image_filenames=image_filenames)
 
-
-@app.route('/database_download/<filename>')
-def database_download(filename):
-    return send_file(filename)
-
 @app.after_request
 def add_header(r):
     """
@@ -58,6 +54,13 @@ def add_header(r):
     r.headers["Expires"] = "0"
     r.headers['Cache-Control'] = 'public, max-age=0'
     return r
+
+# Make filenames work in both production and development
+def filepath(path):
+    if is_production():
+        return "~/home/sketchit/sketch-it" + path
+    else:
+        return path
 
 def is_production():
     root_url = request.url_root
