@@ -58,7 +58,7 @@ def add_header(r):
 # Make filenames work in both production and development
 def filepath(path):
     if is_production():
-        return "~/home/sketchit/sketch-it" + path
+        return "~/home/sketchit/sketch-it/" + path
     else:
         return path
 
