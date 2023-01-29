@@ -10,7 +10,9 @@
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
   <!-- fontawesome icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -19,8 +21,11 @@
   <!--Link to CSS file-->
   <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
 
-  <!-- Link to P5.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <!-- Link to animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Google font import -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick+Hand">
 
   <!--Link to JavaScript-->
   <script src="{{ url_for('static', filename='index.js') }}"></script>
@@ -39,52 +44,53 @@
   <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <title>Website Title</title>
+  <title>sketch-it</title>
 
 </head>
 
 <body>
+
+  <audio id="drawing_sound">
+    <source src="{{ url_for('static', filename='drawing.mp3') }}" type="audio/mpeg">
+  </audio>
+
   <div id="root">
-    
-    <!-- <div id="title-page">
-      <button id="button-to-main-page">To main page</button>
-    </div> -->
 
     <!-- Main page -->
     <div id="main-page">
       <!-- Info box -->
       <div class="info-box">
-        <div class="title">
-          <h1>DRAWER.io</h1>
+        <a href="/">
+          <p class="title">sketch-it!</p>
+        </a>
+        <div class="subtitle">rediscovering the joy in creation.</div>
+        <br>
+        <div class="container">
+
         </div>
-        <div class="subtitle">Rediscovering the joy in creation.</div>
-        <div class="tracks-header">Full Layout</div>
       </div>
 
       <!-- Content box -->
       <div class="content-box">
-        
-        <div class="col">
-
+        <div class="container-fluid">
           <br>
           <br>
           <br>
-          <br>
-          <br>
-          <br>
-        <form action="/submit_photo" method="post" enctype="multipart/form-data">
-          <input id="submit_image_input" class="form-control" type="file" name="submitted_photo" accept="image/*">
-          <br>
-          <button type="submit" class="btn btn-light">Upload <i class="fa-solid fa-upload"></i></button>
-        </form>
-      </div>
+          
+          <form action="/submit_photo" method="post" enctype="multipart/form-data">
+            <input id="submit_image_input" class="form-control" type="file" name="submitted_photo" accept="image/*">
+            <br>
+            <button type="submit" class="btn btn-light">Upload <i class="fa-solid fa-upload"></i></button>
+          </form>
+        </div>
       </div>
 
       <!-- Bottom bar -->
       <div class="bottom-bar">
         <div class="bottom-text">
-          <div>made for QHacks</div>
-        </div><strong>hello@drawly.com</strong>
+          <div><a href="https://qhacks.io/">made for QHacks</a></div>
+        </div>
+        <strong>contact</strong>
         <div class="bottom-text-left">github</div>
       </div>
     </div>

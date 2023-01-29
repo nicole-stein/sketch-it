@@ -6,6 +6,15 @@ from skimage import io
 import matplotlib.pyplot as plt
 import time
 
+
+import importlib 
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import ndimage as ndi
+from skimage import feature, io, segmentation, color
+from skimage.color import rgb2gray, gray2rgb
+from skimage.transform import probabilistic_hough_line, resize
+from time import time
 FRAMES = [
     (5, 5),
     (5, 4.5),
@@ -24,14 +33,7 @@ FRAMES = [
     (1.5,0.5),
 ]
 
-import importlib 
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy import ndimage as ndi
-from skimage import feature, io, segmentation, color
-from skimage.color import rgb2gray, gray2rgb
-from skimage.transform import probabilistic_hough_line, resize
-from time import time
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret123'
@@ -100,6 +102,7 @@ def process_img(img):
     original_img = set_new_size(img)
     t = str(time())
     filenames = []
+    last_image = None
     for i, frame in enumerate(FRAMES):
         print(i)
         img = ndi.gaussian_filter(rgb2gray(original_img), frame[0])
@@ -110,6 +113,17 @@ def process_img(img):
         filename = "submissions/" + t + "_" + str(i) + ".png"
         filenames.append(filename)
         io.imsave(filepath('static/' + filename), img)
+
+        # if i > 0:
+        #     print("IN1")
+        #     print("LAST IMG", last_image, "CURRENT", img)
+        #     # io.imshow(last_image)
+        #     # io.imshow(img)
+        #     last_image = img.copy()
+        # else:
+        #     print("IN2")
+        #     last_image = img.copy()
+
     return filenames
 
 

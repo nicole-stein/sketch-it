@@ -23,7 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Animate the entrance of the board
   $(".drawing_image").css('opacity', "0")
+  $("#drawing_image_wrapper").width($(".drawing_image").width())
   setTimeout(()=>{
+
     $("#drawing_image_wrapper").addClass('animate__animated animate__zoomIn')
   }, 100)
   setTimeout(()=>{
