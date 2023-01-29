@@ -58,31 +58,32 @@
 
     <!-- Main page -->
     <div id="main-page">
+
+
+
       <!-- Info box -->
-      <div class="info-box">
-        <a href="/">
-          <p class="title">sketch-it!</p>
-        </a>
-        <div class="subtitle">rediscovering the joy in creation.</div>
-        <br>
-        <div class="container">
-
-        </div>
-      </div>
-
-      <!-- Content box -->
-      <div class="content-box">
-        <div class="container-fluid">
-          <br>
-          <br>
-          <br>
-          
-          <form action="/submit_photo" method="post" enctype="multipart/form-data">
-            <input id="submit_image_input" class="form-control" type="file" name="submitted_photo" accept="image/*">
+      <div class="container-fluid text-center">
+        <div id="title-segment" class="row">
+          <div class="col-12">
+            <a href="/">
+              <p class="title">sketch-it!</p>
+            </a>
+            <div class="subtitle">if you can see it, you can draw it.</div>
             <br>
-            <button type="submit" class="btn btn-light">Upload <i class="fa-solid fa-upload"></i></button>
-          </form>
+          </div>
         </div>
+
+        <div id="submit-segment" class="row">
+          <div class="col-12">
+            <h2 id="upload_your_photo" class="casual_text">upload your photo!</h2>
+            <form action="/submit_photo" method="post" enctype="multipart/form-data">
+              <input id="submit_image_input" class="form-control" type="file" name="submitted_photo" accept="image/*">
+              <br>
+              <button type="submit" class="btn btn-light">Upload <i class="fa-solid fa-upload"></i></button>
+            </form>
+          </div>
+        </div>
+
       </div>
 
       <!-- Bottom bar -->

@@ -10,7 +10,7 @@ body {
 
 body {
   font-family: sans-serif;
-  background-color: #FFFFFF;
+  background-color: aliceblue;
 }
 
 /* https://coolors.co/102542-f87060-b3a394-cdd7d6-ffffff */
@@ -90,7 +90,8 @@ a {
 }
 
 #submit_image_input {
-  width: 250px;
+  width: 20vw;
+  margin: auto;
 }
 
 
@@ -124,18 +125,35 @@ a {
   background-repeat: no-repeat;
 }
 
+.casual_text {
+  font-family: "Patrick Hand";
+
+}
+
+#upload_your_photo {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
 .title {
   font-size: 5vw;
+  margin-top: 17vh;
   font-weight: 700;
   font-family: "Patrick Hand";
   color:aliceblue;
 }
 
 .subtitle {
-  margin-top: -30px;
-  font-size: 16pt;
+  margin-top: -5vh;
+  font-size: 1.5vw;
   font-family: "Patrick Hand";
   color:aliceblue;
+}
+
+#title-segment {
+  background-color: #245195;
+  /* position: absolute; */
+  height: 40vh;
 }
 
 .bottom-bar {
@@ -145,8 +163,8 @@ a {
   position: fixed;
   width: 100vw;
   bottom: 0;
-  padding-top: 10px;
-  padding-bottom: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 45px;
   background-color: white;
   border-top: 1px solid grey;
