@@ -26,13 +26,25 @@ a {
 .info-box-image {
   width: 8vw;
   height: 90%;
-  box-shadow: 10px 10px;
+  /* box-shadow: 10px 10px; */
   margin: 5px;
   transition: transform .3s ease-out;
+  display:none;
 }
 .info-box-image:hover {
   transform: translate(-7px, -7px);
   
+}
+
+#drawing_image_wrapper {
+  position: absolute;
+  margin-top: 8vw;
+  width: 30vw;
+  height: 30vw;
+  margin-left: 5vw; 
+  margin-right: 5vw;
+  box-shadow: 5px 5px 10px grey;
+  z-index: 1;
 }
 
 .info-box-link:hover {
@@ -45,13 +57,14 @@ a {
 
 .drawing_image {
   position: absolute;
-  margin-top: 8vw;
+  /* opacity: 0; */
+  /* margin-top: 8vw; */
   width: 30vw;
   height: 30vw;
-  margin-left: 5vw; 
-  margin-right: 5vw;
-  box-shadow: 5px 5px 10px grey;
-  z-index: 1;
+  /* margin-left: 5vw;  */
+  /* margin-right: 5vw; */
+  /* box-shadow: 5px 5px 10px grey; */
+  z-index: 2;
 }
 
 #poof_gif {

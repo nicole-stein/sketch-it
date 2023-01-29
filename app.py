@@ -6,6 +6,33 @@ from skimage import io
 import matplotlib.pyplot as plt
 import time
 
+FRAMES = [
+    (5, 5),
+    (5, 4.5),
+    (4.5,4.2),
+    (4.2,4),
+    (4,3.8),
+    (3.8,3.6),
+    (3.8,3.2),
+    (3.2,3.2),
+    (3,2.9),
+    (2.7,2.7),
+    (2.4,2.4),
+    (2,2.1),
+    (1.8,1.7),
+    (1.5,1.2),
+    (1.5,0.5),
+]
+
+import importlib 
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import ndimage as ndi
+from skimage import feature, io, segmentation, color
+from skimage.color import rgb2gray, gray2rgb
+from skimage.transform import probabilistic_hough_line, resize
+from time import time
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret123'
 UPLOAD_FOLDER = 'submissions'
@@ -22,16 +49,7 @@ def submit_photo():
         # For now, save the photo down into the "submissions" folder
         imgfile = request.files.get('submitted_photo')
         img = io.imread(imgfile)
-        io.imshow(img)
-
-        plt.savefig(filepath("submissions/image"))
-
-        # TODO: Edit images
-        time.sleep(1)
-
-        # Return filenames
-        image_filenames = [f"output/image{str(i+1)}.png" for i in range(9)]
-        print(image_filenames)
+        image_filenames = process_img(img)
         return render_template("draw.html", image_filenames=image_filenames)
 
     else:
@@ -76,3 +94,28 @@ if __name__ == "__main__":
     except Exception as e:
         print(e)
     os.system("flask run")
+
+
+def process_img(img):
+    original_img = set_new_size(img)
+    t = str(time())
+    filenames = []
+    for i, frame in enumerate(FRAMES):
+        print(i)
+        img = ndi.gaussian_filter(rgb2gray(original_img), frame[0])
+        img = feature.canny(img, sigma=frame[1])
+        img = 255 - img
+        plt.axis('off')
+        plt.legend().remove()
+        filename = "submissions/" + t + "_" + str(i) + ".png"
+        filenames.append(filename)
+        io.imsave(filepath('static/' + filename), img)
+    return filenames
+
+
+    
+def set_new_size(img):
+    fixed_height = 150
+    new_width = round(img.shape[1] * (fixed_height / img.shape[0]))
+    img = resize(img, (fixed_height, new_width), anti_aliasing=True)
+    return img

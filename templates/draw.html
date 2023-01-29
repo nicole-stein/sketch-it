@@ -51,7 +51,7 @@
 <body>
 
   <audio id="drawing_sound">
-    <source scr="{{ url_for('static', filename='drawing.mp3') }}" type="audio/mpeg">
+    <source src="{{ url_for('static', filename='drawing.mp3') }}" type="audio/mpeg">
   </audio>
 
   <div id="root">
@@ -60,7 +60,7 @@
     <div id="main-page">
       <!-- Info box -->
       <div class="info-box">
-        <p class="title animate__animated animate__bounce">sketch-it!</p>
+        <p class="title">sketch-it!</p>
         <div class="subtitle">rediscovering the joy in creation.</div>
         <br>
         <div class="container">
@@ -79,7 +79,9 @@
       <div class="content-box">
         <div class="container-fluid">
           <div id="drawing_image_col" class="col">
+            <div id="drawing_image_wrapper">
             <img class="drawing_image" src="{{ url_for('static', filename=image_filenames[0]) }}">
+          </div>
           </div>
           <img id="poof_gif" src="{{ url_for('static', filename='poof.gif') }}">
         </div>
