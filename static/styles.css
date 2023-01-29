@@ -47,6 +47,15 @@ a {
   .info-box {
     padding: 10px 15px 10px 10px !important;
   }
+  .title {
+    font-size: 70px !important;
+  }
+  .subtitle {
+    font-size: 25px !important;
+  }
+  #submit_image_input {
+    width: 300px !important;
+  }
 }
 
 #drawing_image_wrapper {
@@ -92,6 +101,7 @@ a {
 #submit_image_input {
   width: 20vw;
   margin: auto;
+
 }
 
 
@@ -113,8 +123,6 @@ a {
 .info-box::-webkit-scrollbar {
   display: none
 }
-
-
 
 .content-box {
   display: flex;
