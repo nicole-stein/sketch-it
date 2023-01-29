@@ -10,7 +10,9 @@
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
   <!-- fontawesome icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -20,10 +22,7 @@
   <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
 
   <!-- Link to animate.css -->
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <!-- Google font import -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick+Hand">
@@ -61,35 +60,29 @@
     <div id="main-page">
       <!-- Info box -->
       <div class="info-box">
-        <div class="title animate__animated animate__bounce">
-          <!-- <img id="logo" src="{{ url_for('static', filename='sketchit.svg') }}"> -->
-          sketch-it!
-        </div>
+        <p class="title animate__animated animate__bounce">sketch-it!</p>
         <div class="subtitle">rediscovering the joy in creation.</div>
+        <br>
+        <div class="container">
+          <div class="row">
+            {% for filename in image_filenames %}
+            <a href="#" class="info-box-link" data-n="{{ loop.index }}">
+              <img class="info-box-image" src="{{ url_for('static', filename=filename) }}">
+            </a>
+            {% endfor %}
+
+          </div>
+        </div>
       </div>
 
       <!-- Content box -->
       <div class="content-box">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <!-- <form action="/submit_photo" method="post" enctype="multipart/form-data">
-          <input type="file" name="submitted_photo" accept="image/*">
-          <button type="submit" class="btn btn-light">Upload <i class="fa-solid fa-upload"></i></button>
-        </form> -->
-        <!-- <ul>
-          {% for filename in image_filenames %}
-            <img src="{{ url_for('static', filename=filename) }}">
-          {% endfor %}
-        </ul> -->
-
-        <button class="btn btn-light" id="change_button">animate</button>
-
-        <img id="changing_gif" src="{{ url_for('static', filename='changing.gif') }}">
-        
+        <div class="container-fluid">
+          <div id="drawing_image_col" class="col">
+            <img class="drawing_image" src="{{ url_for('static', filename=image_filenames[0]) }}">
+          </div>
+          <img id="poof_gif" src="{{ url_for('static', filename='poof.gif') }}">
+        </div>
       </div>
 
       <!-- Bottom bar -->
@@ -98,7 +91,7 @@
           <div><a href="https://qhacks.io/">made for QHacks</a></div>
         </div>
         <strong>contact</strong>
-          <div class="bottom-text-left">github</div>
+        <div class="bottom-text-left">github</div>
       </div>
     </div>
   </div>

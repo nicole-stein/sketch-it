@@ -40,7 +40,6 @@ def submit_photo():
 @app.route("/temp", methods=["GET", "POST"])
 def temp():
     image_filenames = [f"output/image{str(i+1)}.png" for i in range(9)]
-    print(image_filenames)
     return render_template("draw.html", image_filenames=image_filenames)
 
 @app.after_request

@@ -23,14 +23,43 @@ a {
   text-decoration: none
 }
 
+.info-box-image {
+  width: 8vw;
+  height: 90%;
+  box-shadow: 10px 10px;
+  margin: 5px;
+  transition: transform .3s ease-out;
+}
+.info-box-image:hover {
+  transform: translate(-7px, -7px);
+  
+}
+
+.info-box-link:hover {
+  color:rgb(237, 127, 44);
+}
+
 #logo {
    width: 20vw;
 }
 
-#changing_gif {
+.drawing_image {
   position: absolute;
-  height: 50vh;
-  z-index: 10;
+  margin-top: 8vw;
+  width: 30vw;
+  height: 30vw;
+  margin-left: 5vw; 
+  margin-right: 5vw;
+  box-shadow: 5px 5px 10px grey;
+  z-index: 1;
+}
+
+#poof_gif {
+  position: absolute;
+  padding-left: 8vw;
+  width: 45vw;
+  margin-top: 10vh;
+  z-index: 5;
   display: none;
 }
 
@@ -46,7 +75,7 @@ a {
 .info-box {
   position: absolute;
   box-sizing: border-box;
-  width: 35vw;
+  width: 32vw;
   height: 100vh;
   background-color: #245195;
   padding: 30px 20px 50px 40px;
@@ -58,12 +87,14 @@ a {
   display: none
 }
 
+
+
 .content-box {
   display: flex;
   position: fixed;
   width: 100%;
   height: 100%;
-  margin-left: 35vw;
+  margin-left: 32vw;
   background-repeat: no-repeat;
 }
 
@@ -75,7 +106,7 @@ a {
 }
 
 .subtitle {
-  margin-top: 0;
+  margin-top: -30px;
   font-size: 16pt;
   font-family: "Patrick Hand";
   color:aliceblue;
