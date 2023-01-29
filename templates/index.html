@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+  <!-- fontawesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!--Link to CSS file-->
+  <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+
+  <!-- Link to P5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+  <!--Link to JavaScript-->
+  <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+  <!-- Bootstrap Jquery, Bootstrap JS, and Popper -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!-- Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <title>Website Title</title>
+
+</head>
+
+<body>
+  <div id="root">
+    
+    <!-- <div id="title-page">
+      <button id="button-to-main-page">To main page</button>
+    </div> -->
+
+    <!-- Main page -->
+    <div id="main-page">
+      <!-- Info box -->
+      <div class="info-box">
+        <div class="title">
+          <h1>DRAWER.io</h1>
+        </div>
+        <div class="subtitle">Rediscovering the joy in creation.</div>
+        <div class="tracks-header">Full Layout</div>
+      </div>
+
+      <!-- Content box -->
+      <div class="content-box">
+        
+        <div class="col">
+
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        <form action="/submit_photo" method="post" enctype="multipart/form-data">
+          <input id="submit_image_input" class="form-control" type="file" name="submitted_photo" accept="image/*">
+          <br>
+          <button type="submit" class="btn btn-light">Upload <i class="fa-solid fa-upload"></i></button>
+        </form>
+      </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="bottom-bar">
+        <div class="bottom-text">
+          <div>made for QHacks</div>
+        </div><strong>hello@drawly.com</strong>
+        <div class="bottom-text-left">github</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300;700&family=Montserrat:wght@200;300;400;500&display=swap);
+
+
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #FFFFFF;
+}
+
+/* https://coolors.co/102542-f87060-b3a394-cdd7d6-ffffff */
+
+a,body {
+  color: #102542;
+}
+
+a {
+  text-decoration: none
+}
+
+#logo {
+   width: 20vw;
+}
+
+#changing_gif {
+  position: absolute;
+  height: 50vh;
+  z-index: 10;
+  display: none;
+}
+
+#submit_image_input {
+  width: 250px;
+}
+
+
+#main-page {
+  /* display: none; */
+}
+
+.info-box {
+  position: absolute;
+  box-sizing: border-box;
+  width: 35vw;
+  height: 100vh;
+  background-color: #245195;
+  padding: 30px 20px 50px 40px;
+  overflow-y: scroll;
+  scrollbar-width: none
+}
+
+.info-box::-webkit-scrollbar {
+  display: none
+}
+
+.content-box {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin-left: 35vw;
+  background-repeat: no-repeat;
+}
+
+.title {
+  font-size: 5vw;
+  font-weight: 700;
+  font-family: "Patrick Hand";
+  color:aliceblue;
+}
+
+.subtitle {
+  margin-top: 0;
+  font-size: 16pt;
+  font-family: "Patrick Hand";
+  color:aliceblue;
+}
+
+.bottom-bar {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  padding-left: 45px;
+  background-color: white;
+  border-top: 1px solid grey;
+  font-size: 10pt
+}
+
+.bottom-text {
+  margin-right: 50px;
+}
+
+.bottom-text-left {
+  width: -webkit-min-content;
+  width: min-content;
+  margin-left: auto;
+  margin-right: 60px;
+  align-self: center;
+  justify-self: flex-end;
+  cursor: pointer
+}

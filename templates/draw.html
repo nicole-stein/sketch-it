@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+  <!-- fontawesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!--Link to CSS file-->
+  <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+
+  <!-- Link to animate.css -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <!-- Google font import -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick+Hand">
+
+  <!--Link to JavaScript-->
+  <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+  <!-- Bootstrap Jquery, Bootstrap JS, and Popper -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <!-- Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <title>sketch-it</title>
+
+</head>
+
+<body>
+
+  <audio id="drawing_sound">
+    <source scr="{{ url_for('static', filename='drawing.mp3') }}" type="audio/mpeg">
+  </audio>
+
+  <div id="root">
+
+    <!-- Main page -->
+    <div id="main-page">
+      <!-- Info box -->
+      <div class="info-box">
+        <div class="title animate__animated animate__bounce">
+          <!-- <img id="logo" src="{{ url_for('static', filename='sketchit.svg') }}"> -->
+          sketch-it!
+        </div>
+        <div class="subtitle">rediscovering the joy in creation.</div>
+      </div>
+
+      <!-- Content box -->
+      <div class="content-box">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- <form action="/submit_photo" method="post" enctype="multipart/form-data">
+          <input type="file" name="submitted_photo" accept="image/*">
+          <button type="submit" class="btn btn-light">Upload <i class="fa-solid fa-upload"></i></button>
+        </form> -->
+        <!-- <ul>
+          {% for filename in image_filenames %}
+            <img src="{{ url_for('static', filename=filename) }}">
+          {% endfor %}
+        </ul> -->
+
+        <button class="btn btn-light" id="change_button">animate</button>
+
+        <img id="changing_gif" src="{{ url_for('static', filename='changing.gif') }}">
+        
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="bottom-bar">
+        <div class="bottom-text">
+          <div><a href="https://qhacks.io/">made for QHacks</a></div>
+        </div>
+        <strong>contact</strong>
+          <div class="bottom-text-left">github</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
